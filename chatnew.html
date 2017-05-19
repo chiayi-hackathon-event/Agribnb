@@ -295,7 +295,7 @@
                               <h4 style="color:black;">
                                 巨蟹座 興趣：寫Code及桌遊。
                               </h4>
-                              <button type="button" class="btn btn-primary btn-sm btn-block">已是您的Contact聯絡人</button>
+                              <button type="button" class="btn btn-primary btn-sm btn-block">新增至Contact聯絡人</button>
                   							</div>
                               </div>
                           </div>
@@ -308,12 +308,12 @@
                        	<div class="row mt">
                        		<div class="col-md-12">
                             <div class="col-md-4">
-                              <span style="color:red;">完成度80%</span>
+                              <span style="color:red;">完成度40%</span>
                             </div>
                             <div class="col-md-8">
                               <div class="progress progress-striped active">
-                            <div class="progress-bar"  role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                              <span>80% Complete</span>
+                            <div class="progress-bar"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                              <span class="sr-only">40% Complete</span>
                             </div>
                           </div>
                         </div>
@@ -344,7 +344,6 @@
              				           			<td>
              				                        <span class="check">
              				                        <a href="index.html#" style="color:black;">交換LINE</a></span>
-                                            <span class="badge bg-success">完成</span>
              				                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
              									</td>
              				                </tr>
@@ -353,7 +352,6 @@
              				           			<td>
              				                        <span class="check">
              				                        <a href="index.html#" style="color:black;">約他出去</a></span>
-                                            <span class="badge bg-success">完成</span>
              				                        <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
              									</td>
                             </tr>
@@ -453,22 +451,21 @@
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-            var eventData = [
-                {"date":"2017-05-01","badge":false,"title":"Example 1"},
-                {"date":"2017-05-02","badge":true,"title":"Example 2"}
-            ];
-            $("#my-calendar").zabuto_calendar({
 
+            $("#my-calendar").zabuto_calendar({
                 action: function () {
                     return myDateFunction(this.id, false);
                 },
                 action_nav: function () {
                     return myNavFunction(this.id);
                 },
-                data: eventData,
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
                 legend: [
-                    {type: "text", label: "Dating", badge: "0"},
-                    {type: "text", label: "Other", badge: "0"}
+                    {type: "text", label: "Dating", badge: "00"},
+                    {type: "text", label: "Other", badge: "01"}
                 ]
             });
         });
