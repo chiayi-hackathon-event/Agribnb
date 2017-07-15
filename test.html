@@ -515,7 +515,11 @@ $( document ).ready(function() {
 
 
 									<h3 style="padding-bottom:10px"><i class="fa fa-arrows-v" aria-hidden="true"></i>
- <button type="button"  data-toggle="modal" data-target="#myModal"><i class="fa fa-car" aria-hidden="true"></i></button>
+ <button type="button"  data-toggle="modal" data-target="#myModal_bus"><i class="fa fa-subway" aria-hidden="true"></i></button>
+ <button type="button"  data-toggle="modal" data-target="#myModal_car"><i class="fa fa-car" aria-hidden="true"></i></button>
+ <button type="button"  data-toggle="modal" data-target="#myModal_bicycle"><i class="fa fa-bicycle" aria-hidden="true"></i></button>
+ <button type="button"  data-toggle="modal" data-target="#myModal_walk"><i class="fa fa-child" aria-hidden="true"></i></button>
+
 </h3>
 
 
@@ -940,8 +944,9 @@ $( document ).ready(function() {
     </div>
 </div>
 
+<!--driving、walking bicycling transit  -->
  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal_bus" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -949,14 +954,17 @@ $( document ).ready(function() {
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">路線規劃</h4>
+
+
         </div>
         <div class="modal-body">
+
 
 		<iframe
 		  width="550"
 		  height="450"
 		  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDgtsV1s1W-ZSnTQIkiBcUZGzoG0jN35WA&origin=南崙彩繪村&destination=新港文化館25號倉庫&avoid=tolls|highways" allowfullscreen>
+		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDgtsV1s1W-ZSnTQIkiBcUZGzoG0jN35WA&origin=新港文化館25號倉庫&destination=嘉義縣新港鄉159縣道151號&avoid=tolls|highways&mode=transit " allowfullscreen>
 		</iframe>
 
 
@@ -968,6 +976,101 @@ $( document ).ready(function() {
 
     </div>
   </div>
+
+  <div class="modal fade" id="myModal_car" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">路線規劃</h4>
+
+
+        </div>
+        <div class="modal-body">
+
+
+		<iframe
+		  width="550"
+		  height="450"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDgtsV1s1W-ZSnTQIkiBcUZGzoG0jN35WA&origin=新港文化館25號倉庫&destination=嘉義縣新港鄉159縣道151號&avoid=tolls|highways " allowfullscreen>
+		</iframe>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="myModal_bicycle" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">路線規劃</h4>
+
+
+        </div>
+        <div class="modal-body">
+
+
+		<iframe
+		  width="550"
+		  height="450"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDgtsV1s1W-ZSnTQIkiBcUZGzoG0jN35WA&origin=新港文化館25號倉庫&destination=嘉義縣新港鄉159縣道151號&avoid=tolls|highways&mode=bicycling " allowfullscreen>
+		</iframe>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal_walk" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">路線規劃</h4>
+
+
+        </div>
+        <div class="modal-body">
+
+
+		<iframe
+		  width="550"
+		  height="450"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDgtsV1s1W-ZSnTQIkiBcUZGzoG0jN35WA&origin=新港文化館25號倉庫&destination=嘉義縣新港鄉159縣道151號&avoid=tolls|highways&mode=walking " allowfullscreen>
+		</iframe>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
 
 <div id="preloader"></div>
@@ -993,7 +1096,7 @@ $( document ).ready(function() {
 			setTimeout(function(){
 			    $('#preloader').fadeOut('slow', function () {
 			    });
-			},2000); // set the time here
+			},1000); // set the time here
 		    });
 		});
 
@@ -1004,7 +1107,7 @@ $( document ).ready(function() {
 			$(".caption").click(function(){
 
 				//alert($(this).parent().siblings()[0].children[0].innerHTML);
-				$(".event-list").append("<h3 style='padding-bottom:10px'><i class='fa fa-arrows-v' aria-hidden='true'></i> <button type='button' data-toggle='modal' data-target='#myModal'><i class='fa fa-car' aria-hidden='true'></i></button> </h3>");
+				$(".event-list").append("<h3 style='padding-bottom:10px'><i class='fa fa-arrows-v' aria-hidden='true'></i> <button type='button' data-toggle='modal' data-target='#myModal_bus'><i class='fa fa-subway' aria-hidden='true'></i></button>&nbsp;<button type='button' data-toggle='modal' data-target='#myModal_car'><i class='fa fa-car' aria-hidden='true'></i></button>&nbsp;<button type='button' data-toggle='modal' data-target='#myModal_bicycle'><i class='fa fa-bicycle' aria-hidden='true'></i></button>&nbsp;<button type='button' data-toggle='modal' data-target='#myModal_walk'><i class='fa fa-child' aria-hidden='true'></i></button></h3>");
 				$(".event-list").append("<li><time datetime='2014-07-20'><span class='day'><i class='fa fa-hotel' aria-hidden='true'></i></span></time><div class='info'><h2 class='title'>新港林爺爺家</h2><h5 style='padding-top:5px;'>嘉義縣新港鄉159縣道151號 (05)588-1888</h5></div></li>");
 
 
